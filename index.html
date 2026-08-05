@@ -1,16 +1,22 @@
-﻿<!DOCTYPE html>
+HTML
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exploring Modern Solution</title>
+
+  <!-- 1. ADD PYSCRIPT CDN LINKS HERE -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
   <style>
     /* CSS RESETS & VARIABLES */
     :root {
       --primary-color: #d97706;
       --primary-hover: #b45309;
       --text-dark: #292524;
-      --text-muted: #787166c;
+      --text-muted: #787166;
       --bg-light: #fff2cc;
       --white: #ffffff;
       --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -275,7 +281,7 @@
       }
 
       .nav-links {
-        display: none; /* Hide standard nav on small mobile screens */
+        display: none;
       }
     }
   </style>
@@ -300,7 +306,11 @@
     <div class="container hero-content">
       <h1>Grow Your Business with Modern Solutions</h1>
       <p>We provide comprehensive strategies, operational guidance, and technical infrastructure tailored to elevate your business operations.</p>
-      <a href="#contact" class="btn btn-primary">Request Consultation</a>
+      
+      <!-- Python Output Target Container -->
+      <div id="python-output" style="margin-top: 15px; font-weight: bold; color: var(--primary-color);"></div>
+
+      <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Request Consultation</a>
     </div>
   </section>
 
@@ -387,6 +397,19 @@
       <p>&copy; 2026 Enterprise.io. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- 2. WRITE YOUR PYTHON SCRIPT HERE -->
+  <script type="py">
+    from pyscript import display
+    import datetime
+
+    # Python code running live in the browser
+    current_time = datetime.datetime.now().strftime("%A, %B %d, %Y")
+    message = f"Welcome! Python status check completed on {current_time}."
+
+    # Display the result inside the HTML div with id="python-output"
+    display(message, target="python-output")
+  </script>
 
 </body>
 </html>
