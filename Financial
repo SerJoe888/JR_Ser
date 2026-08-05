@@ -1,8 +1,41 @@
-</html>
-<!-- Replace the URL below with your published embed link -->
-<iframe 
-  src="https://docs.google.com/spreadsheets/d/1ctCjSS9mhCSPWyPruv7iWoZLDf7XRpt1/edit?usp=sharing&ouid=109962476144706987662&rtpof=true&sd=true" 
-  width="100%" 
-  height="500" 
-  style="border: 1px solid #ccc;">
-</iframe>
+<section class="capabilities-section">
+  <h2>Our Core Capabilities</h2>
+  
+  <div class="cards-container">
+    <!-- Financial & Reconciliation Card -->
+    <a href="/financial-reconciliation" class="card-link">
+      <div class="card" id="financial-card">
+        <div class="card-image">
+          <img src="path-to-your-coffee-mug-image.jpg" alt="Financial & Reconciliation">
+        </div>
+        <h3>Financial & Reconciliation</h3>
+        <p>Streamline corporate accounting, reporting schedules, and internal record management seamlessly.</p>
+        <span class="card-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Operational Strategy Card -->
+    <a href="/operational-strategy" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <img src="path-to-your-car-image.jpg" alt="Operational Strategy">
+        </div>
+        <h3>Operational Strategy</h3>
+        <p>Optimize organizational workflows, documentation standards, and project planning timelines.</p>
+        <span class="card-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Enterprise Card -->
+    <a href="/enterprise" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <img src="path-to-your-abstract-image.jpg" alt="Enterprise">
+        </div>
+        <h3>Enterprise</h3>
+        <p>Ensure structured frameworks and compliance standards.</p>
+        <span class="card-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+  </div>
+</section>
