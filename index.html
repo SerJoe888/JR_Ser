@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,6 +128,17 @@ HTML
       margin-bottom: 2rem;
     }
 
+    /* HERO IMAGE STYLING */
+    .hero-img {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      margin: 1.5rem auto;
+      display: block;
+    }
+
     /* FEATURES SECTION */
     .features {
       padding: 5rem 0;
@@ -158,8 +168,12 @@ HTML
       transform: translateY(-4px);
     }
 
-    .card-icon {
-      font-size: 2rem;
+    /* CARD IMAGE STYLING */
+    .card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: calc(var(--border-radius) - 2px);
       margin-bottom: 1rem;
     }
 
@@ -346,6 +360,9 @@ HTML
       <h1>Grow Your Business with Modern Solutions</h1>
       <p>We provide comprehensive strategies, operational guidance, and technical infrastructure tailored to elevate your business operations.</p>
       
+      <!-- HERO SAMPLE IMAGE -->
+      <img src="https://picsum.photos/650/350" alt="Modern Business Infrastructure" class="hero-img">
+
       <div id="python-output" style="margin-top: 15px; font-weight: bold; color: var(--primary-color);"></div>
 
       <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Request Consultation</a>
@@ -358,17 +375,20 @@ HTML
       <h2 class="section-title">Our Core Capabilities</h2>
       <div class="grid-3">
         <div class="card">
-          <div class="card-icon">📊</div>
+          <!-- CARD IMAGE 1 -->
+          <img src="https://picsum.photos/300/160?random=1" alt="Financial Analytics" class="card-img">
           <h3>Financial & Reconciliation</h3>
           <p>Streamline corporate accounting, revenue schedules, and internal record verification seamlessly.</p>
         </div>
         <div class="card">
-          <div class="card-icon">⚡</div>
+          <!-- CARD IMAGE 2 -->
+          <img src="https://picsum.photos/300/160?random=2" alt="Operational Strategy" class="card-img">
           <h3>Operational Strategy</h3>
           <p>Optimize organizational workflows, documentation standards, and project planning timelines.</p>
         </div>
         <div class="card">
-          <div class="card-icon">🛡️</div>
+          <!-- CARD IMAGE 3 -->
+          <img src="https://picsum.photos/300/160?random=3" alt="Enterprise Compliance" class="card-img">
           <h3>Enterprise Compliance</h3>
           <p>Ensure structural, legal, and operational frameworks adhere strictly to regulatory standards.</p>
         </div>
