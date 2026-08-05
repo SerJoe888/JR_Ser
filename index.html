@@ -6,7 +6,7 @@ HTML
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exploring Modern Solution</title>
 
-  <!-- 1. ADD PYSCRIPT CDN LINKS HERE -->
+  <!-- PYSCRIPT CDN LINKS -->
   <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
@@ -220,6 +220,44 @@ HTML
       color: var(--primary-color);
     }
 
+    /* CALCULATOR SECTION */
+    .calculator-section {
+      padding: 4rem 0;
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .calc-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: var(--border-radius);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .calc-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .calc-result {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background-color: var(--bg-light);
+      border-radius: var(--border-radius);
+      border: 1px solid #fde68a;
+      display: none;
+    }
+
+    .calc-result h4 {
+      color: var(--primary-hover);
+      margin-bottom: 0.5rem;
+    }
+
     /* CONTACT SECTION */
     .contact {
       padding: 5rem 0;
@@ -294,6 +332,7 @@ HTML
       <a href="#" class="brand-logo">Enterprise.io</a>
       <ul class="nav-links">
         <li><a href="#features">Services</a></li>
+        <li><a href="#calculator">Calculator</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -307,7 +346,6 @@ HTML
       <h1>Grow Your Business with Modern Solutions</h1>
       <p>We provide comprehensive strategies, operational guidance, and technical infrastructure tailored to elevate your business operations.</p>
       
-      <!-- Python Output Target Container -->
       <div id="python-output" style="margin-top: 15px; font-weight: bold; color: var(--primary-color);"></div>
 
       <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Request Consultation</a>
@@ -333,6 +371,37 @@ HTML
           <div class="card-icon">🛡️</div>
           <h3>Enterprise Compliance</h3>
           <p>Ensure structural, legal, and operational frameworks adhere strictly to regulatory standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PYTHON CALCULATOR SECTION -->
+  <section id="calculator" class="calculator-section">
+    <div class="container">
+      <h2 class="section-title">Financial Repayment Estimator</h2>
+      <div class="calc-card">
+        <div class="calc-form">
+          <div class="form-group">
+            <label for="principal">Principal Amount (₱ / $)</label>
+            <input type="number" id="principal" value="100000" step="1000">
+          </div>
+          <div class="form-group">
+            <label for="rate">Annual Interest Rate (%)</label>
+            <input type="number" id="rate" value="7.5" step="0.1">
+          </div>
+          <div class="form-group">
+            <label for="years">Term Duration (Years)</label>
+            <input type="number" id="years" value="5" step="1">
+          </div>
+          
+          <!-- PyScript event listener trigger -->
+          <button py-click="calculate_payment" class="btn btn-primary">Calculate Schedule</button>
+        </div>
+
+        <div id="calc-result" class="calc-result">
+          <h4>Calculation Summary</h4>
+          <p id="calc-output"></p>
         </div>
       </div>
     </div>
@@ -398,17 +467,45 @@ HTML
     </div>
   </footer>
 
-  <!-- 2. WRITE YOUR PYTHON SCRIPT HERE -->
+  <!-- PYTHON LOGIC SCRIPT -->
   <script type="py">
-    from pyscript import display
+    from pyscript import display, document
     import datetime
 
-    # Python code running live in the browser
-    current_time = datetime.datetime.now().strftime("%A, %B %d, %Y")
-    message = f"Welcome! Python status check completed on {current_time}."
+    # Display initial load message in hero section
+    current_time = datetime.datetime.now().strftime("%B %d, %Y")
+    display(f"Python Engine Active • System Ready ({current_time})", target="python-output")
 
-    # Display the result inside the HTML div with id="python-output"
-    display(message, target="python-output")
+    # Interactive Function linked to py-click="calculate_payment"
+    def calculate_payment(event):
+        try:
+            # Read DOM input values
+            p = float(document.getElementById("principal").value)
+            annual_rate = float(document.getElementById("rate").value)
+            years = int(document.getElementById("years").value)
+
+            # Financial calculation formula (Monthly Payment)
+            monthly_rate = (annual_rate / 100) / 12
+            total_months = years * 12
+
+            if monthly_rate > 0:
+                monthly_payment = (p * monthly_rate * (1 + monthly_rate)**total_months) / ((1 + monthly_rate)**total_months - 1)
+            else:
+                monthly_payment = p / total_months
+
+            total_paid = monthly_payment * total_months
+            total_interest = total_paid - p
+
+            # Format text output
+            result_text = f"Monthly Payment: {monthly_payment:,.2f} | Total Interest: {total_interest:,.2f} | Total Paid: {total_paid:,.2f}"
+
+            # Make result container visible and populate content
+            document.getElementById("calc-result").style.display = "block"
+            document.getElementById("calc-output").innerText = result_text
+
+        except Exception as e:
+            document.getElementById("calc-result").style.display = "block"
+            document.getElementById("calc-output").innerText = f"Please enter valid numeric values. Error: {str(e)}"
   </script>
 
 </body>
