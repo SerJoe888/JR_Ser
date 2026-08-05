@@ -1,37 +1,67 @@
-<!-- SERVICES / FEATURES -->
-<section id="features" class="features">
-  <div class="container">
-    <h2 class="section-title">Our Core Capabilities</h2>
-    <div class="grid-3">
-      
-      <!-- CARD 1: Financial & Reconciliation (CLICKABLE) -->
-      <a href="financial.html" class="card-link" id="financial-link">
-        <div class="card">
-          <!-- CARD IMAGE 1 -->
-          <img src="https://picsum.photos/300/160?random=1" alt="Financial Analytics" class="card-img">
-          <h3>Financial & Reconciliation</h3>
-          <p>Streamline corporate accounting, reporting schedules, and internal record management seamlessly.</p>
-        </div>
-      </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Core Capabilities</title>
+  
+  <style>
+    /* CSS FIX FOR CLICKABLE CARDS */
+    .card-link {
+      text-decoration: none; /* Removes default blue link underlines */
+      color: inherit;         /* Prevents text color from changing to blue */
+      display: block;        /* Ensures the entire card area is clickable */
+      height: 100%;
+    }
 
-      <!-- CARD 2: Operational Strategy (CLICKABLE) -->
-      <a href="operational.html" class="card-link">
-        <div class="card">
-          <img src="https://picsum.photos/300/160?random=2" alt="Operational Strategy" class="card-img">
-          <h3>Operational Strategy</h3>
-          <p>Optimize organizational workflows, documentation standards, and project planning timelines.</p>
-        </div>
-      </a>
+    /* Visual Feedback on Hover */
+    .card-link:hover .card {
+      cursor: pointer;
+      transform: translateY(-4px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
 
-      <!-- CARD 3: Enterprise (CLICKABLE) -->
-      <a href="enterprise.html" class="card-link">
-        <div class="card">
-          <img src="https://picsum.photos/300/160?random=3" alt="Enterprise" class="card-img">
-          <h3>Enterprise</h3>
-          <p>Ensure structured frameworks and compliance standards.</p>
-        </div>
-      </a>
+  <!-- SERVICES / FEATURES SECTION -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Our Core Capabilities</h2>
+      <div class="grid-3">
+        
+        <!-- CARD 1: Financial & Reconciliation (LINKS TO financial.html) -->
+        <a href="financial.html" class="card-link">
+          <div class="card">
+            <!-- CARD IMAGE 1 -->
+            <img src="https://picsum.photos/300/160?random=1" alt="Financial Analytics" class="card-img">
+            <h3>Financial & Reconciliation</h3>
+            <p>Streamline corporate accounting, reporting schedules, and internal record management seamlessly.</p>
+          </div>
+        </a>
 
+        <!-- CARD 2: Operational Strategy -->
+        <a href="operational.html" class="card-link">
+          <div class="card">
+            <img src="https://picsum.photos/300/160?random=2" alt="Operational Strategy" class="card-img">
+            <h3>Operational Strategy</h3>
+            <p>Optimize organizational workflows, documentation standards, and project planning timelines.</p>
+          </div>
+        </a>
+
+        <!-- CARD 3: Enterprise -->
+        <a href="enterprise.html" class="card-link">
+          <div class="card">
+            <img src="https://picsum.photos/300/160?random=3" alt="Enterprise" class="card-img">
+            <h3>Enterprise</h3>
+            <p>Ensure structured frameworks and compliance standards.</p>
+          </div>
+        </a>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</body>
+</html
