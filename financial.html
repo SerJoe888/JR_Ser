@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Capabilities</title>
+  <style>
+    /* Section & Container Setup */
+    .capabilities-section {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+    }
 
+    .capabilities-section h2 {
+      font-size: 2rem;
+      color: #1a1a1a;
+      margin-bottom: 30px;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Link Wrapper - Fixes Clickability */
+    .card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      flex: 1 1 280px;
+      max-width: 340px;
+      outline: none;
+    }
+
+    /* Card Styling */
+    .card {
+      background-color: #f1f8ed;
+      border-radius: 12px;
+      padding: 24px 20px;
+      height: 100%;
+      text-align: left;
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hover & Focus States */
+    .card-link:hover .card,
+    .card-link:focus .card {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      background-color: #e8f3e3;
+    }
+
+    .card-link:active .card {
+      transform: translateY(-2px);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: #2b2b2b;
+      margin: 0 0 10px 0;
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .card-cta {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2d6a4f;
+    }
+
+    .card-link:hover .card-cta {
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .cards-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card-link {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="capabilities-section">
+  <h2>Our Core Capabilities</h2>
+  
+  <div class="cards-container">
+    <!-- Financial & Reconciliation Card (Linked to financial.html) -->
+    <a href="financial.html" class="card-link" id="financial-link">
+      <div class="card">
+        <div class="card-image">
+          <img src="path-to-your-coffee-mug-image.jpg" alt="Financial & Reconciliation">
+        </div>
+        <h3>Financial & Reconciliation</h3>
+        <p>Streamline corporate accounting, reporting schedules, and internal record management seamlessly.</p>
+        <span class="card-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Operational Strategy Card -->
+    <a href="operational.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <img src="path-to-your-car-image.jpg" alt="Operational Strategy">
+        </div>
+        <h3>Operational Strategy</h3>
+        <p>Optimize organizational workflows, documentation standards, and project planning timelines.</p>
+        <span class="card-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Enterprise Card -->
+    <a href="enterprise.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <img src="path-to-your-abstract-image.jpg" alt="Enterprise">
+        </div>
+        <h3>Enterprise</h3>
+        <p>Ensure structured frameworks and compliance standards.</p>
+        <span class="card-cta">Learn More &rarr;</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<script>
+  // OPTIONAL: If you DO NOT want to open a new page and want a pop-up instead,
+  // uncomment the code below:
+
+  /*
+  document.getElementById('financial-link').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevents opening financial.html
+    alert('Opening Financial & Reconciliation Details...');
+    // Add your modal pop-up code here
+  });
+  */
+</script>
+
+</body>
+</html>
